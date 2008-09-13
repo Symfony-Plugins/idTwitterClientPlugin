@@ -1,0 +1,94 @@
+= idTwitterClient plugin =
+
+The `idTwitterClientPlugin` offers an object interface for Twitter.com API. 
+
+== Possible uses ==
+
+ * serving a xml/json/RSS/Atom feed based on twitter response
+ * updating twitter status
+ * create a twitter bot
+
+== Contents ==
+
+This plugin contains a unique class called idTwitterClient
+
+Unit tests will be available in the SVN repository.
+
+== Installation ==
+
+  * Patch the sfCurlAdapter of sfWebBrowser 1.0.1 with this patch http://trac.symfony-project.org/attachment/ticket/4095/sfCurlAdapter.patch
+
+  * Install the plugin
+{{{
+$ symfony plugin-install http://plugins.symfony-project.com/idTwitterClientPlugin
+}}}
+
+  * Alternatively, if you don't have PEAR installed, you can download the latest package attached to this plugin's wiki page and extract it under your project's `plugins/` directory
+
+  * Clear the cache to enable the autoloading to find the new class
+{{{
+$ symfony cc
+}}}
+
+== Tutorials ==
+
+Update the user status
+{{{
+
+  $t = new idTwitterClient('username','password');
+  $t->StatusUpdate('I\'m updating my status...');
+
+}}}
+
+Retrieve user timeline as json
+{{{
+
+  $t = new idTwitterClient('username','password');
+  $json = $t->UserTimeline('json');
+
+}}}
+
+Retrieve user timeline as rss since yesterday
+{{{
+
+  $t = new idTwitterClient('username','password');
+  $feed = $t->UserTimeline('rss', date('r', strtotime('yesterday')); // if sfFeed2Plugin is enabled the method will return a sfFeed objects array
+  
+}}}
+
+Retrieve public timeline as xml
+{{{
+
+  $t = new idTwitterClient();  // for public timeline auth is not required
+  $feed = $t->PublicTimeline('xml'); // will return a SimpleXMLElement object
+  
+}}}
+
+
+Search "symfony" twitts from a specified user
+{{{
+
+  $t = new idTwitterClient();  // for search auth is not required
+  $json = $t->Search('symfony from:fullo'); 
+  
+}}}
+
+
+== TODO ==
+
+ * unit test 
+ * refactoring of different classes
+
+== Changelog ==
+
+=== 2008-08-07 | 0.3.0 Stable ===
+
+ * fullo: fixed support to latest sfCurlAdapter patch
+
+=== 2008-07-30 | 0.2.0 Alpha === 
+
+ * fullo: added Search method
+ 
+=== 2008-07-29 | 0.1.0 Alpha === 
+
+ * fullo: Initial release

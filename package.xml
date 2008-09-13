@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.7.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
+ <name>idTwitterClientPlugin</name>
+ <channel>pear.symfony-project.com</channel>
+ <summary>idTwitterClientPlugin adds support to Twitter API for symfony 1.1.</summary>
+ <description>idTwitterClientPlugin adds support to Twitter API for symfony 1.1.</description>
+ <lead>
+  <name>Francesco Fullone</name>
+  <user>fullo</user>
+  <email>ff@ideato.it</email>
+  <active>yes</active>
+ </lead>
+ <date>2008-08-07</date>
+ <time>23:15:26</time>
+ <version>
+  <release>0.3.0</release>
+  <api>0.3.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
+ <notes>--</notes>
+ <contents>
+  <dir name="/">
+   <file md5sum="409d1fa4b53ddb3902652882e1bf8454" name="lib/idTwitterClient.class.php" role="data" />
+   <file md5sum="3b3c055c8d04b9268f84a29123733601" name="README" role="data" />
+   <file md5sum="8e6019b2569fd6c6a634d7fa10ac295b" name="LICENSE" role="data" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.1</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.1</min>
+   </pearinstaller>
+   <package>
+    <name>symfony</name>
+    <channel>pear.symfony-project.com</channel>
+    <min>1.1.0</min>
+    <max>1.2.0</max>
+    <exclude>1.2.0</exclude>
+   </package>
+   <package>
+    <name>sfWebBrowserPlugin</name>
+    <channel>pear.symfony-project.com</channel>
+    <min>1.0.1</min>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+</package>
